@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sorting Algorithms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sorting Algorithms</h1>
+    </header>
+    <form>
+        <input type="radio" name="num" class="js-radio-self" checked>변수 직접 입력
+        <input type="radio" name="num" class="js-radio-ran">난수 생성<br>
+        <div class="self">
+            <input type="text" size="80" class="js-input">
+            <button type="button" class="js-btn-self">Sort</button>
+        </div>
+        <div class="ran hiding">
+            변수 개수 : <input type="text">
+            최대값 : <input type="text">
+            <button type="button" class="js-btn-ran">Sort</button>
+        </div>
+
+        <div class="result">
+            <div class="insert">
+                삽입 정렬<br>
+                <textarea></textarea>
+            </div>
+            <div class="select">
+                선택 정렬<br>
+                <textarea></textarea>
+            </div>
+            <div class="bubble">
+                버블 정렬<br>
+                <textarea></textarea>
+            </div>
+            <div class="quick">
+                퀵 정렬<br>
+                <textarea></textarea>
+            </div>
+            <div class="merge">
+                합병 정렬<br>
+                <textarea></textarea>
+            </div>
+            <div class="heap">
+                힙 정렬<br>
+                <textarea></textarea>
+            </div>
+            <div class="shell">
+                셸 정렬<br>
+                <textarea></textarea>
+            </div>
+            <div class="radix">
+                기수 정렬<br>
+                <textarea></textarea>
+            </div>
+            <div class="count">
+                계수 정렬<br>
+                <textarea></textarea>
+            </div>
+        </div>
+    </form>
+
+    <canvas class="js-canvas" width="600" height="300" style="background-color: rgb(176, 176, 176)"></canvas>
+
+    <script src="script/main.js"></script>
+    <script src="script/insert.js"></script>
+    <script src="script/select.js"></script>
+    <script src="script/bubble.js"></script>
+    <script src="script/quick.js"></script>
+    <script src="script/merge.js"></script>
+    <script src="script/heap.js"></script>
+    <script src="script/shell.js"></script>
+    <script src="script/radix.js"></script>
+    <script src="script/count.js"></script>
+</body>
+</html>
