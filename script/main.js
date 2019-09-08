@@ -1,5 +1,5 @@
-const numInput = document.querySelector(".js-input");
-const numBtn = document.querySelector(".js-btn");
+const numInput = document.querySelector(".input");
+const numBtn = document.querySelector(".btn");
 
 let numArr = [];
 
