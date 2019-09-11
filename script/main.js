@@ -2,10 +2,12 @@ const inputSelf = document.querySelector(".input-self");
 const inputCnt = document.querySelector(".input-cnt");
 const inputMax = document.querySelector(".input-max");
 const textInfo = document.querySelector(".info");
+const textOrigin = document.querySelector(".origin");
 
 let numArr = [];
 
 function ranNum(cnt, max){
+    numArr = [];
     for(let i = 0; i < cnt; i++){
         numArr[i] = Math.floor(Math.random() * max) + 1;
     }
@@ -19,6 +21,7 @@ function handleInputRan(event){
             ranNum(inputCnt.value, inputMax.value);
             inputCnt.value = ``;
             inputMax.value = ``;
+            textOrigin.innerText = numArr;
         }
     }
 }
@@ -31,6 +34,7 @@ function handleInputSelf(event){
             event.preventDefault();
             numArr = inputSelf.value.split(' ');
             inputSelf.value = ``;
+            textOrigin.innerText = numArr;
         }
     }
 }
