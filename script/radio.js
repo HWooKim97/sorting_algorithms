@@ -4,7 +4,6 @@ const self = document.querySelector(".self");
 const ran = document.querySelector(".ran");
 
 function handleRadio(event){
-    console.log(this.value);
     if(this.value === `1`){
         self.classList.remove("hiding");
         self.classList.add("showing");
