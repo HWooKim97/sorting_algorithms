@@ -1,20 +1,10 @@
 // 삽입정렬
 
-function InsertSort(originArr){
-    const startTime = new Date().getTime();
-    let arr = JSON.parse(JSON.stringify(originArr));
-
+function InsertSort(arr){
     for(let i = 1; i < arr.length; i++){
-        let cnt = 0;
-        for(let j = i - 1; j >= 0; j--){
-            if(arr[i - cnt] < arr[j]){
-                [arr[i - cnt], arr[j]] = [arr[j], arr[i - cnt]];
-                cnt++;
-            } else break;
-        }
+        let tmp = arr[i], j;
+        for(j = i - 1; j >= 0 && tmp < arr[j]; j--)
+            arr[j + 1] = arr[j];
+        arr[j + 1] = tmp;
     }
-    const endTime = new Date().getTime();
-
-    result[INSERT] = endTime - startTime;
-    textArea[INSERT].innerText = arr;
 }

@@ -1,12 +1,5 @@
 // 병합정렬
 
-function EndMergeSort(startTime, arr){
-    const endTime = new Date().getTime();
-
-    result[MERGE] = endTime - startTime;
-    textArea[MERGE].innerText = arr;
-}
-
 function Merging(left, right) {
     let result = [];
     let leftIndex = 0;
@@ -35,12 +28,9 @@ function DoMergeSort(arr){
     return Merging(DoMergeSort(left), DoMergeSort(right));
 }
 
-function MergeSort(originArr){
-    const startTime = new Date().getTime();
-    let arr = JSON.parse(JSON.stringify(originArr));
+function MergeSort(arr){
+    let result = DoMergeSort(arr);
 
-    new Promise(function(resolve, reject){
-        arr = DoMergeSort(arr);
-    })
-    .then(EndMergeSort(startTime, arr));
+    for(let i = 0; i < arr.length; i++)
+      arr[i] = result[i];
 }

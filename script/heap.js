@@ -1,14 +1,12 @@
 // 힙정렬
 
-function HeapSort(originArr){
-    const startTime = new Date().getTime();
-    let arr = JSON.parse(JSON.stringify(originArr));
-
+function HeapSort(arr){
+    let result = arr;
     let heap = [];
     heap[0] = -1;
 
     //insert heap
-    arr.forEach(element => {
+    result.forEach(element => {
         heap.push(element);
         let newNode = heap.length - 1;
 
@@ -20,17 +18,19 @@ function HeapSort(originArr){
             }else break;
         }
     });
+    
     //delete heap
-    arr = [];
+    result = [];
 
     for(let i = 1; i < heap.length; i++){
-        arr.push(heap[1]);
+        result.push(heap[1]);
         heap[1] = heap[heap.length - i];
         let nowNode = 1;
         while(nowNode <= heap.length - i){
             const left = nowNode * 2;
             let right = nowNode * 2 + 1;
             
+            if(left > heap.length - i) break;
             if(right > heap.length - i) right = left;
             if(heap[left] <= heap[right] && heap[nowNode] > heap[left]){
                 [heap[nowNode], heap[left]] = [heap[left], heap[nowNode]];
@@ -41,9 +41,7 @@ function HeapSort(originArr){
             } else break;
         }
     }
-    
-    const endTime = new Date().getTime();
 
-    result[HEAP] = endTime - startTime;
-    textArea[HEAP].innerText = arr;
+    for(let i = 0; i < arr.length; i++)
+      arr[i] = result[i];
 }

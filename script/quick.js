@@ -1,12 +1,5 @@
 // 퀵정렬
 
-function EndQuickSort(startTime, arr){
-    const endTime = new Date().getTime();
-
-    result[QUICK] = endTime - startTime;
-    textArea[QUICK].innerText = arr;
-}
-
 function DoQuickSort(arr, left, right){
     let L = left, R = right,
         pivot = arr[Math.floor((left + right) / 2)];
@@ -26,11 +19,6 @@ function DoQuickSort(arr, left, right){
     if (L < right) DoQuickSort(arr, L, right);
 }
 
-function QuickSort(originArr){
-    const startTime = new Date().getTime();
-    let arr = JSON.parse(JSON.stringify(originArr));
-
-    new Promise(function(resolve, reject){})
-    .then(DoQuickSort(arr, 0, arr.length - 1))
-    .then(EndQuickSort(startTime, arr));
+function QuickSort(arr){
+    DoQuickSort(arr, 0, arr.length - 1);
 }
