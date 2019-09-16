@@ -20,12 +20,12 @@ let result = [];
 let index = 0;
 
 function TimeCheck(fnc){
-    const startTime = new Date().getTime();
+    const startTime = performance.now();
     let arr = JSON.parse(JSON.stringify(originArr));
 
     fnc(arr);
 
-    const endTime = new Date().getTime();
+    const endTime = performance.now();
 
     result[index] = endTime - startTime;
     textArea[index++].innerText = arr;
@@ -37,6 +37,7 @@ function Sort(){
     new Promise(function(resolve, reject){
         textOrigin.innerText = originArr;
         index = 0;
+        result = [];
     })
     .then(TimeCheck(InsertSort))
     .then(TimeCheck(SelectSort))
@@ -46,13 +47,14 @@ function Sort(){
     .then(TimeCheck(HeapSort))
     .then(TimeCheck(ShellSort))
     .then(TimeCheck(RadixSort))
-    .then(TimeCheck(CountSort));
+    .then(TimeCheck(CountSort))
+    .then(SetChart(result));
     console.log(result);
 }
 
 function RanNum(cnt, max){
     for(let i = 0; i < cnt; i++){
-        originArr[i] = Math.floor(Math.random() * max) + 1;
+        originArr.push(Math.floor(Math.random() * max) + 1);
     }
 }
 
@@ -84,6 +86,7 @@ function HandleInputSelf(event){
 }
 
 function init(){
+    canvasDefault();
     inputSelf.onkeypress = HandleInputSelf;
     inputCnt.onkeypress = HandleInputRan;
     inputMax.onkeypress = HandleInputRan;

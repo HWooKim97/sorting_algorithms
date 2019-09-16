@@ -18,15 +18,15 @@
     <div class="content">
         <div class="left">
             <form>
-                <input type="radio" name="num" class="radio-self" value="1" checked>User value
-                <input type="radio" name="num" class="radio-ran" value="2">Random value<br>
+                <input type="radio" name="num" class="radio-ran" value="2" checked>Random value
+                <input type="radio" name="num" class="radio-self" value="1">User value<br>
 
-                <div class="self">
+                <div class="self hiding">
                     <input type="text" class="input-self" placeholder="Variables / Separate by space">
                     <div class="info">Press Enter!</div>
                 </div>
 
-                <div class="ran hiding">
+                <div class="ran">
                     <input type="text" class="input-cnt" placeholder="The number of variables">
                     <input type="text" class="input-max" placeholder="Maximum value of the variables">
                     <div class="info">Press Enter!</div>
@@ -82,7 +82,7 @@
     </div>
 
     <div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
         <script src="script/radio.js"></script>
         <script src="script/insert.js"></script>
         <script src="script/select.js"></script>
