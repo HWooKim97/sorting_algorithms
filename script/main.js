@@ -4,6 +4,7 @@ const inputMax = document.querySelector(".input-max");
 const textInfo = document.querySelector(".info");
 const textOrigin = document.querySelector(".origin");
 const textArea = [
+    document.querySelector(".javascript"),
     document.querySelector(".insert"),
     document.querySelector(".select"),
     document.querySelector(".bubble"),
@@ -18,6 +19,12 @@ const textArea = [
 let originArr = []; 
 let result = [];
 let index = 0;
+
+function JSDfaultSort(arr){
+    arr.sort(function(a,b){
+        return a - b;
+    });
+}
 
 function TimeCheck(fnc){
     const startTime = performance.now();
@@ -39,6 +46,7 @@ function Sort(){
         index = 0;
         result = [];
     })
+    .then(TimeCheck(JSDfaultSort))
     .then(TimeCheck(InsertSort))
     .then(TimeCheck(SelectSort))
     .then(TimeCheck(BubbleSort))
@@ -48,7 +56,7 @@ function Sort(){
     .then(TimeCheck(ShellSort))
     .then(TimeCheck(RadixSort))
     .then(TimeCheck(CountSort))
-    .then(SetChart(result));
+    .then(SetTimeChart(result));
     console.log(result);
 }
 
@@ -86,7 +94,6 @@ function HandleInputSelf(event){
 }
 
 function init(){
-    canvasDefault();
     inputSelf.onkeypress = HandleInputSelf;
     inputCnt.onkeypress = HandleInputRan;
     inputMax.onkeypress = HandleInputRan;

@@ -4,14 +4,6 @@
     padding: 0;
 }
 
-.hiding{
-    display: none;
-}
-  
-.showing{
-    display: block;
-}
-
 header{
     width: 100%;
     padding: 20px;
@@ -39,6 +31,7 @@ header{
 
 .right{
     width: 49%;
+    align-content: center;
 }
 
 .self .ran{
@@ -98,8 +91,21 @@ textarea{
     padding: 3px;
 }
 
-canvas{
-    width: 100%;
-    height: 650;
-    margin-top: 10px;
+.chartTXT{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 350px;
+}
+
+.time-chart{
+    display: block;
+    margin-top: 60px;
+}
+
+.hiding{
+    display: none;
+}
+  
+.showing{
+    display: block;
 }
