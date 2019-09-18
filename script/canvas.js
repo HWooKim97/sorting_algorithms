@@ -3,10 +3,12 @@ const timeCTX = timeCanvas.getContext("2d");
 let timeChart;
 
 const chartTXT = document.querySelector(".chartTXT");
+const chartBox = document.querySelector(".chartbox");
 
 function SetTimeChart(result){
     if(timeChart == null){
         chartTXT.classList.add("hiding");
+        chartBox.classList.remove("hiding");
         timeCanvas.style.border = "solid rgb(176, 176, 176) 1px";
         timeCanvas.style.width = "100%";
         timeCTX.clearRect(0, 0, timeCanvas.width, timeCanvas.height);
