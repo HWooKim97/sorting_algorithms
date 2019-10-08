@@ -3,18 +3,7 @@ const inputCnt = document.querySelector(".input-cnt");
 const inputMax = document.querySelector(".input-max");
 const textInfo = document.querySelector(".info");
 const textOrigin = document.querySelector(".origin");
-const textArea = [
-    document.querySelector(".javascript"),
-    document.querySelector(".insert"),
-    document.querySelector(".select"),
-    document.querySelector(".bubble"),
-    document.querySelector(".quick"),
-    document.querySelector(".merge"),
-    document.querySelector(".heap"),
-    document.querySelector(".shell"),
-    document.querySelector(".radix"),
-    document.querySelector(".count")
-];
+const textResult = document.querySelector(".result");
 
 let originArr = []; 
 let result = [];
@@ -34,8 +23,8 @@ function TimeCheck(fnc){
 
     const endTime = performance.now();
 
-    result[index] = endTime - startTime;
-    textArea[index++].innerText = arr;
+    result[index++] = endTime - startTime;
+    textResult.innerText = arr;
 
     console.log(fnc.name + ` end!`);
 }
@@ -54,7 +43,8 @@ function Sort(){
     .then(TimeCheck(MergeSort))
     .then(TimeCheck(HeapSort))
     .then(TimeCheck(ShellSort))
-    .then(TimeCheck(RadixSort))
+    .then(TimeCheck(RadixSortLSD))
+    .then(TimeCheck(RadixSortMSD))
     .then(TimeCheck(CountSort))
     .then(SetTimeChart(result));
     console.log(result);
