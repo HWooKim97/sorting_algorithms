@@ -14,12 +14,12 @@ function SetTimeChart(result){
         timeCTX.clearRect(0, 0, timeCanvas.width, timeCanvas.height);
 
         timeChart = new Chart(timeCTX, {
-            type: 'bar',
+            type: 'horizontalBar',
             data: {
                 labels: [
                     "JSDefault","Insertion", "Selection", 
                     "Bubble", "Quick",  "Merge", "Heap",
-                    "Shell", "Radix", "Counting"
+                    "Shell", "RadixLSD", "RadixMSD", "Counting"
                 ],
                 datasets: [{
                     label: "Task Time(ms)",
