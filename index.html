@@ -18,8 +18,8 @@
     <div class="content">
         <div class="left">
             <form>
-                <input type="radio" name="num" class="radio-ran" value="2" checked>Random value
-                <input type="radio" name="num" class="radio-self" value="1">User value<br>
+                <input type="radio" name="num" class="radio-ran" value="1" checked>Random value
+                <input type="radio" name="num" class="radio-self" value="2">User input value
 
                 <div class="ran">
                     <input type="text" class="input-cnt" placeholder="The number of variables">
@@ -35,7 +35,8 @@
                 <textarea class="origin" readonly>Before Sorting</textarea>
                 
                 <div class="downTXT">↓</div>
-                <textarea class="result" readonly>After Sorting</textarea>
+                <textarea class="result-asc" readonly>Ascending sort</textarea>
+                <textarea class="result-desc" readonly>Descending sort</textarea>
             </form>
         </div>
         
@@ -58,7 +59,8 @@
         <script src="script/merge.js"></script>
         <script src="script/heap.js"></script>
         <script src="script/shell.js"></script>
-        <script src="script/radix.js"></script>
+        <script src="script/radixLSD.js"></script>
+        <script src="script/radixMSD.js"></script>
         <script src="script/count.js"></script>
         <script src="script/canvas.js"></script>
         <script src="script/main.js"></script>
