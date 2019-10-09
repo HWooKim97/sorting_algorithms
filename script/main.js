@@ -3,7 +3,8 @@ const inputCnt = document.querySelector(".input-cnt");
 const inputMax = document.querySelector(".input-max");
 const textInfo = document.querySelector(".info");
 const textOrigin = document.querySelector(".origin");
-const textResult = document.querySelector(".result");
+const textResultASC = document.querySelector(".result-asc");
+const textResultDESC = document.querySelector(".result-desc");
 
 let originArr = []; 
 let result = [];
@@ -24,7 +25,9 @@ function TimeCheck(fnc){
     const endTime = performance.now();
 
     result[index++] = endTime - startTime;
-    textResult.innerText = arr;
+
+    textResultASC.innerText = arr;
+    textResultDESC.innerText = arr.reverse();
 
     console.log(fnc.name + ` end!`);
 }
