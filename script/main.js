@@ -28,8 +28,6 @@ function TimeCheck(fnc){
 
     textResultASC.innerText = arr;
     textResultDESC.innerText = arr.reverse();
-
-    console.log(fnc.name + ` end!`);
 }
 
 function Sort(){
@@ -47,10 +45,9 @@ function Sort(){
     .then(TimeCheck(HeapSort))
     .then(TimeCheck(ShellSort))
     .then(TimeCheck(RadixSortLSD))
-    .then(TimeCheck(RadixSortMSD))
     .then(TimeCheck(CountSort))
+    .then(TimeCheck(DoRadixSortMSD))
     .then(SetTimeChart(result));
-    console.log(result);
 }
 
 function RanNum(cnt, max){
