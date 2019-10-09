@@ -1,0 +1,47 @@
+**push**
+
+git remote add origin "https://github.com/<user>/<directory>.git"
+ // 원격 서버 할당
+
+git add *
+ // 모든 파일 인덱스에 추가
+
+git commit -m "<changes>"
+ // "changes"을 가진 수정본 커밋
+
+git push origin <branch>
+ // 로컬 저장소의 변경사항을 원격 저장소의 <branch>에 적용
+
+
+**merge**
+
+git clone "https://github.com/<user>/<directory>.git"
+ // 원격 서버의 내용 복사
+
+git pull
+ // 원격 저장소의 내용을 로컬 저장소에 적용
+
+git merge <branch>
+ // 현재 branch에 <branch> 사항을 적용
+
+git diff <branch1> <branch2>
+ // <branch1> 중심으로 <branch2> 변경사항 비교
+
+git checkout -- <filename>
+ // 해당 파일을 직전의 커밋 상태로 되돌림
+
+git fetch origin
+git reset --hard origin/master
+ // 현재 로컬 내의 모든 변경사항 제거, 이전 커밋 단계로 되돌림
+
+
+**branch**
+
+git checkout <branch>
+ // <branch>로 이동
+
+git checkout -b <branch>
+ // <branch> 생성
+
+git branch -d <branch>
+ // <branch> 삭제
