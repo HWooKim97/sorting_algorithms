@@ -5,15 +5,15 @@ const ran = document.querySelector(".ran");
 
 function handleRadio(event){
     if(this.value === `1`){
-        self.classList.remove("hiding");
-        self.classList.add("showing");
-        ran.classList.remove("showing");
-        ran.classList.add("hiding");
-    } else if(this.value === `2`){
         self.classList.remove("showing");
         self.classList.add("hiding");
         ran.classList.remove("hiding");
         ran.classList.add("showing");
+    } else if(this.value === `2`){
+        self.classList.remove("hiding");
+        self.classList.add("showing");
+        ran.classList.remove("showing");
+        ran.classList.add("hiding");
     }
 }
 
