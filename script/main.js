@@ -35,6 +35,8 @@ function Sort(){
         textOrigin.innerText = originArr;
         index = 0;
         result = [];
+
+        resolve();
     })
     .then(TimeCheck(JSDfaultSort))
     .then(TimeCheck(InsertSort))
@@ -48,6 +50,8 @@ function Sort(){
     .then(TimeCheck(RadixSortMSD))
     .then(TimeCheck(CountSort))
     .then(SetTimeChart(result));
+
+    console.log(result);
 }
 
 function RanNum(cnt, max){
