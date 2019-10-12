@@ -33,6 +33,7 @@ function RadixSortMSD(arr){
     let mod = 1;
     while(max / mod >= 10) mod *= 10;
 
+    cntMSD = 0;
     DoRadixSortMSD(resultArr, arr, mod);
 
     for(let i = 0; i < arr.length; i++)
