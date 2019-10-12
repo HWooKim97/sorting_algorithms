@@ -17,11 +17,8 @@ function RadixSortLSD(arr){
 
         let cnt = 0;
         for(let i = 0; i < queue.length; i++){
-            let value = null;
-            if(queue[i] != null){
-                while((value = queue[i].shift()) != null)
-                    arr[cnt++] = value;
-            }
+            while(queue[i] != null && queue[i].length != 0)
+                arr[cnt++] = queue[i].shift();
         }
     }
 }

@@ -45,8 +45,8 @@ function Sort(){
     .then(TimeCheck(HeapSort))
     .then(TimeCheck(ShellSort))
     .then(TimeCheck(RadixSortLSD))
+    .then(TimeCheck(RadixSortMSD))
     .then(TimeCheck(CountSort))
-    .then(TimeCheck(DoRadixSortMSD))
     .then(SetTimeChart(result));
 }
 

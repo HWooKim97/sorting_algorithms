@@ -29,8 +29,8 @@ function DoMergeSort(arr){
 }
 
 function MergeSort(arr){
-    let result = DoMergeSort(arr);
+    let resultArr = DoMergeSort(arr);
 
     for(let i = 0; i < arr.length; i++)
-      arr[i] = result[i];
+      arr[i] = resultArr[i];
 }
