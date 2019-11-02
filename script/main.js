@@ -10,6 +10,13 @@ let originArr = [];
 let result = [];
 let index = 0;
 
+const SORTING = [
+    JSDfaultSort, InsertSort, SelectSort,
+    BubbleSort, QuickSort, MergeSort,
+    HeapSort, ShellSort, RadixSortLSD,
+    RadixSortMSD, CountSort
+]
+
 function JSDfaultSort(arr){
     arr.sort(function(a,b){
         return a - b;
@@ -31,27 +38,14 @@ function TimeCheck(fnc){
 }
 
 function Sort(){
-    new Promise(function(resolve, reject){
-        textOrigin.innerText = originArr;
-        index = 0;
-        result = [];
-
-        resolve();
-    })
-    .then(TimeCheck(JSDfaultSort))
-    .then(TimeCheck(InsertSort))
-    .then(TimeCheck(SelectSort))
-    .then(TimeCheck(BubbleSort))
-    .then(TimeCheck(QuickSort))
-    .then(TimeCheck(MergeSort))
-    .then(TimeCheck(HeapSort))
-    .then(TimeCheck(ShellSort))
-    .then(TimeCheck(RadixSortLSD))
-    .then(TimeCheck(RadixSortMSD))
-    .then(TimeCheck(CountSort))
-    .then(SetTimeChart(result));
-
-    console.log(result);
+    textOrigin.innerText = originArr;
+    index = 0;
+    result = [];
+    
+    for(let i = 0; i < SORTING.length; i++)
+        TimeCheck(SORTING[i]);
+    
+    SetTimeChart(result);
 }
 
 function RanNum(cnt, max){
