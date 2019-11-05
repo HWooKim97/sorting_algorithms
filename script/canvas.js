@@ -43,14 +43,3 @@ function SetTimeChart(result){
         timeChart.update();
     }
 }
-
-// const delta = 300;
-// let timer = null;
-
-// function resizeDone(){
-// }
-
-// window.addEventListener('resize', function(){
-//     clearTimeout(timer);
-//     timer = setTimeout(resizeDone, delta);
-// }, false);
