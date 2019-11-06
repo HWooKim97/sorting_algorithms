@@ -14,10 +14,10 @@ let tmp;
 let check = true;
 
 const SORTING = [
-    JSDfaultSort, InsertSort, SelectSort,
-    bubbleSort, QuickSort, MergeSort,
-    HeapSort, ShellSort, RadixSortLSD,
-    RadixSortMSD, CountSort
+    JSDfaultSort, insertSort, selectSort,
+    bubbleSort, quickSort, mergeSort,
+    heapSort, shellSort, radixSortLSD,
+    radixSortMSD, countSort
 ]
 
 function JSDfaultSort(arr){
@@ -48,7 +48,7 @@ function sort(){
     for(let i = 0; i < SORTING.length; i++)
         timeCheck(SORTING[i]);
     
-    SetTimeChart(result);
+    setTimeChart(result);
 }
 
 function ranNum(cnt, max){
