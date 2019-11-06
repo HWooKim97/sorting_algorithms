@@ -1,6 +1,6 @@
 // 힙정렬
 
-function HeapSort(arr){
+function heapSort(arr){
     let result = arr;
     let heap = [];
     heap[0] = -1;

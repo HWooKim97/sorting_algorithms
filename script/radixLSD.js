@@ -1,6 +1,6 @@
 // 기수정렬 LSD
 
-function RadixSortLSD(arr){
+function radixSortLSD(arr){
     let max = arr[0];
     for(let i = 1; i < arr.length; i++)
         if(max < arr[i]) max = arr[i];

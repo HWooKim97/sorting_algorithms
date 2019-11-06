@@ -1,6 +1,6 @@
 // 병합정렬
 
-function Merging(left, right) {
+function merging(left, right) {
     let result = [];
     let leftIndex = 0;
     let rightIndex = 0;
@@ -18,18 +18,18 @@ function Merging(left, right) {
     return [...result, ...left.slice(leftIndex), ...right.slice(rightIndex)];
 }
 
-function DoMergeSort(arr){
+function doMergeSort(arr){
     if(arr.length === 1) return arr;
     
     const middle = Math.floor(arr.length / 2);
     const left = arr.slice(0, middle);
     const right = arr.slice(middle);
 
-    return Merging(DoMergeSort(left), DoMergeSort(right));
+    return merging(doMergeSort(left), doMergeSort(right));
 }
 
-function MergeSort(arr){
-    let resultArr = DoMergeSort(arr);
+function mergeSort(arr){
+    let resultArr = doMergeSort(arr);
 
     for(let i = 0; i < arr.length; i++)
       arr[i] = resultArr[i];

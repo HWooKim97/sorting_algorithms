@@ -1,6 +1,6 @@
 // 퀵정렬
 
-function DoQuickSort(arr, left, right){
+function doQuickSort(arr, left, right){
     let L = left, R = right,
         pivot = arr[Math.floor((left + right) / 2)];
 
@@ -15,10 +15,10 @@ function DoQuickSort(arr, left, right){
         }
     }
 
-    if (left < R) DoQuickSort(arr, left, R);
-    if (L < right) DoQuickSort(arr, L, right);
+    if (left < R) doQuickSort(arr, left, R);
+    if (L < right) doQuickSort(arr, L, right);
 }
 
-function QuickSort(arr){
-    DoQuickSort(arr, 0, arr.length - 1);
+function quickSort(arr){
+    doQuickSort(arr, 0, arr.length - 1);
 }

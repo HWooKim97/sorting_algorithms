@@ -15,7 +15,7 @@ let check = true;
 
 const SORTING = [
     JSDfaultSort, InsertSort, SelectSort,
-    BubbleSort, QuickSort, MergeSort,
+    bubbleSort, QuickSort, MergeSort,
     HeapSort, ShellSort, RadixSortLSD,
     RadixSortMSD, CountSort
 ]
@@ -26,7 +26,7 @@ function JSDfaultSort(arr){
     });
 }
 
-function TimeCheck(fnc){
+function timeCheck(fnc){
     const startTime = performance.now();
     let arr = JSON.parse(JSON.stringify(originArr));
 
@@ -40,36 +40,36 @@ function TimeCheck(fnc){
     textResultDESC.innerText = arr.reverse();
 }
 
-function Sort(){
+function sort(){
     textOrigin.innerText = originArr;
     index = 0;
     result = [];
     
     for(let i = 0; i < SORTING.length; i++)
-        TimeCheck(SORTING[i]);
+        timeCheck(SORTING[i]);
     
     SetTimeChart(result);
 }
 
-function RanNum(cnt, max){
+function ranNum(cnt, max){
     for(let i = 0; i < cnt; i++){
         originArr.push(Math.floor(Math.random() * max) + 1);
     }
 }
 
-function HandleInputRan(event){
+function handleInputRan(event){
     if (event.keyCode === 13){
         if (inputCnt.value == `` || inputMax.value == ``){
             alert(`Enter the value!`);
         } else{
             originArr = [];
-            RanNum(inputCnt.value, inputMax.value);
-            Sort();
+            ranNum(inputCnt.value, inputMax.value);
+            sort();
         }
     }
 }
 
-function HandleInputSelf(event){
+function handleInputSelf(event){
     if (event.keyCode === 13){
         if (inputSelf.value == ``){
             alert(`Enter the value!`);
@@ -83,12 +83,12 @@ function HandleInputSelf(event){
             for(let i = 0; i < originArr.length; i++){
                 if (isNaN(originArr[i])) originArr.splice(i--,1);
             }
-            Sort();
+            sort();
         }
     }
 }
 
-function InputCheck(event){ 
+function inputCheck(event){ 
     if(event.keyCode >= 48 && event.keyCode <= 57) return true;
     else if(event.keyCode === 32 || event.keyCode === 13) return true;
     else return false;
@@ -97,8 +97,8 @@ function InputCheck(event){
 function init(){
     inputSelf.onkeypress = function(event){
         tmp = inputSelf.value;
-        check = InputCheck(event);
-        HandleInputSelf(event);
+        check = inputCheck(event);
+        handleInputSelf(event);
     };
     inputSelf.onkeyup = function(event){
         if(check === false){
@@ -107,8 +107,8 @@ function init(){
             check = true;
         }
     };
-    inputCnt.onkeypress = HandleInputRan;
-    inputMax.onkeypress = HandleInputRan;
+    inputCnt.onkeypress = handleInputRan;
+    inputMax.onkeypress = handleInputRan;
 }
 
 init();

@@ -1,6 +1,6 @@
 // 삽입정렬
 
-function InsertSort(arr){
+function insertSort(arr){
     for(let i = 1; i < arr.length; i++){
         let tmp = arr[i], j;
         for(j = i - 1; j >= 0 && tmp < arr[j]; j--)

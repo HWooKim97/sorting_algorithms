@@ -5,7 +5,7 @@ let timeChart;
 const chartTXT = document.querySelector(".chartTXT");
 const chartBox = document.querySelector(".chartbox");
 
-function SetTimeChart(result){
+function setTimeChart(result){
     if(timeChart == null){
         chartTXT.classList.add("hiding");
         chartBox.classList.remove("hiding");
