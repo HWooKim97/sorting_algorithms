@@ -10,6 +10,9 @@ let originArr = [];
 let result = [];
 let index = 0;
 
+let tmp;
+let check = true;
+
 const SORTING = [
     JSDfaultSort, InsertSort, SelectSort,
     BubbleSort, QuickSort, MergeSort,
@@ -55,10 +58,10 @@ function RanNum(cnt, max){
 }
 
 function HandleInputRan(event){
-    if(event.keyCode === 13){
-        if(inputCnt.value == `` || inputMax.value == ``){
+    if (event.keyCode === 13){
+        if (inputCnt.value == `` || inputMax.value == ``){
             alert(`Enter the value!`);
-        }else{
+        } else{
             originArr = [];
             RanNum(inputCnt.value, inputMax.value);
             Sort();
@@ -67,22 +70,43 @@ function HandleInputRan(event){
 }
 
 function HandleInputSelf(event){
-    if(event.keyCode === 13){
-        if(inputSelf.value == ``){
+    if (event.keyCode === 13){
+        if (inputSelf.value == ``){
             alert(`Enter the value!`);
-        }else{
+        } else{
             originArr = [];
             event.preventDefault();
             originArr = inputSelf.value.split(' ').map(function(item){
                 return parseInt(item, 10);
             });
+            
+            for(let i = 0; i < originArr.length; i++){
+                if (isNaN(originArr[i])) originArr.splice(i--,1);
+            }
             Sort();
         }
     }
 }
 
+function InputCheck(event){ 
+    if(event.keyCode >= 48 && event.keyCode <= 57) return true;
+    else if(event.keyCode === 32 || event.keyCode === 13) return true;
+    else return false;
+}
+
 function init(){
-    inputSelf.onkeypress = HandleInputSelf;
+    inputSelf.onkeypress = function(event){
+        tmp = inputSelf.value;
+        check = InputCheck(event);
+        HandleInputSelf(event);
+    };
+    inputSelf.onkeyup = function(event){
+        if(check === false){
+            inputSelf.value = tmp;
+            window.alert("input only number!");
+            check = true;
+        }
+    };
     inputCnt.onkeypress = HandleInputRan;
     inputMax.onkeypress = HandleInputRan;
 }
